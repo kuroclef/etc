@@ -1,0 +1,10 @@
+ChallengeResponseAuthentication no
+ClientAliveInterval 15
+PasswordAuthentication yes
+PermitRootLogin no
+Port $SSH_LISTEN_PORT
+Subsystem sftp /usr/lib/ssh/sftp-server
+UsePAM no
+
+Match Group wheel
+  PasswordAuthentication no
