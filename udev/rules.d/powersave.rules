@@ -1,0 +1,7 @@
+ACTION=="add", TEST=="power/control", ATTR{power/control}="auto"
+#ACTION=="add", SUBSYSTEM=="net", TEST=="power/control", ATTR{power/control}="on"
+#ACTION=="add", SUBSYSTEM=="net", KERNEL=="wlan0", RUN+="/usr/bin/iwconfig wlp4s0 power off"
+#ACTION=="add", SUBSYSTEM=="scsi_host", TEST=="link_power_management_policy", ATTR{link_power_management_policy}="min_power"
+ACTION=="add", SUBSYSTEM=="usb", TEST=="power/autosuspend", ATTR{power/autosuspend}="1"
+ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{product}=="*eyboard*", ATTR{power/control}="on"
+ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{product}=="*ireless*", ATTR{power/control}="on"
