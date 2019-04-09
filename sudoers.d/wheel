@@ -1,0 +1,7 @@
+Defaults requiretty
+Defaults:%wheel !requiretty
+Defaults env_reset
+Defaults env_keep = "EDITOR HOME"
+%wheel ALL=(ALL) NOPASSWD: /usr/bin/pacman, /usr/bin/reboot
+kuroclef ALL=(ALL) ALL
+kuroclef ALL=(ALL) NOPASSWD: /usr/bin/pacman, /usr/bin/poweroff, /usr/bin/reboot

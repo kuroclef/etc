@@ -1,0 +1,21 @@
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -i lo -j ACCEPT
+-A INPUT -4 -s 192.168.1.0/24 -j ACCEPT
+-A INPUT -6 -s fe80::/64 -j ACCEPT
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+#YouTube IPv6
+#-A OUTPUT -6 -d 2404:6800::/32 -j REJECT
+
+#Server
+#-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+#-A INPUT -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
+
+#WiVRn
+-A INPUT -p udp -m state --state NEW -m udp --dport 5353 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 9757 -j ACCEPT
+-A INPUT -p udp -m state --state NEW -m udp --dport 9757 -j ACCEPT
+COMMIT
